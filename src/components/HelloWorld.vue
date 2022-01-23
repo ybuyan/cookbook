@@ -35,6 +35,34 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      list: []
+    }
+  },
+  mounted: function() {
+    this.getTest();
+  },
+  methods: {
+    getTest(){
+        // 使用axios获取mock的模拟数据
+      this.$axios.get('/api/ratings/list').then(res => {
+        const { code, data } = res.data
+        if (code === 200 && data) {
+          data.forEach(v => {
+            this.list.push(v)
+          })
+          this.loading = false // 加载状态结束
+        }
+        if (this.list.length >= 100) {
+          this.finished = true // 数据全部加载完毕
+        }
+        console.log(this.list);
+      }).catch(err => {
+        console.log(`调用失败：${err}`)
+      })
+    }
   }
 }
 </script>
