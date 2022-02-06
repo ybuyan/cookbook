@@ -47,7 +47,8 @@ export default {
   methods: {
     getTest(){
         // 使用axios获取mock的模拟数据
-      this.$axios.get('/api/ratings/list').then(res => {
+      this.$axios.get('https://61ed1923f3011500174d22b4.mockapi.io/test').then(res => {
+        console.log(res);
         const { code, data } = res.data
         if (code === 200 && data) {
           data.forEach(v => {
