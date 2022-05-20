@@ -10,23 +10,15 @@
             <ul id="main-menu" class="navbar-nav">
                 <li class="about">
                     <span class="bg"></span>
-                    <router-link to="/chinese"> 中华菜系 </router-link>
+                    <router-link to="/football"> 足球 </router-link>
                 </li>
                 <li class="about">
                     <span class="bg"></span>
-                    <router-link to="/chinese"> 外国菜谱 </router-link>
+                    <router-link to="/basketball"> 篮球 </router-link>
                 </li>
                 <li class="about">
                     <span class="bg"></span>
-                    <router-link to="/chinese"> 点心 </router-link>
-                </li>
-                <li class="about">
-                    <span class="bg"></span>
-                    <router-link to="/chinese"> 汤 </router-link>
-                </li>
-                <li class="about">
-                    <span class="bg"></span>
-                    <router-link to="/chinese"> 食疗食补 </router-link>
+                    <router-link to="/football"> 其他... </router-link>
                 </li>
             </ul>
             

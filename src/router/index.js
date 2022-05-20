@@ -1,20 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home/Home.vue'
+import home from '../views/home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/chinese',
-    name: 'Home',
-    component: Home,
+    redirect: '/football',
+    name: 'home',
+    component: home,
     children: [
       {
-        path: '/chinese',
-        name: 'Chinese',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Chinese/Chinese.vue'),
+        path: '/football',
+        name: 'football',
+        component: () => import(/* webpackChunkName: "about" */ '../views/football/index.vue'),
+      },
+      {
+        path: '/basketball',
+        name: 'basketball',
+        component: () => import(/* webpackChunkName: "about" */ '../views/basketball/index.vue'),
       }
     ]
   }
